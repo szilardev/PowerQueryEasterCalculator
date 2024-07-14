@@ -10,12 +10,12 @@
  */
 
 let 
-    EasterDate = (yearNumOrDateOrDateTime as any, optional holidayName as any, optional julianCalendar as logical) as date => 
+    EasterDate = (yearNumOrDateOrDateTime as any, optional holidayName as any, optional julianCalendar as any) as date => 
     let
                     getYear           = yearNumOrDateOrDateTime, 
                     getHolidayName    = if holidayName = null or holidayName = "" then null 
                                         else try Number.From(holidayName) otherwise Text.Replace(Text.Lower(holidayName), " ", ""), 
-                    getJulianCalendar = if julianCalendar = null then false else julianCalendar, 
+                    getJulianCalendar = if julianCalendar = null or julianCalendar = "" then false else Logical.FromText(julianCalendar), 
 
                     yearNum = try Date.Year(Date.From(DateTime.FromText(getYear))) 
                               otherwise try Date.Year(Date.From(getYear))
