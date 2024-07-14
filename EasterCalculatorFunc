@@ -1,0 +1,71 @@
+// Power Query Easter Calculator
+//Created By: Szilárd Kántor - szilard.kantor@gmail.com
+
+/** 
+ * Calculate Easter, Good Friday, Pentecost
+ * @param {number|text|date|datetime} yearNumOrDateOrDateTime Current year number It must be between 1583 and 2299. 
+ * @param {null|number|text} holidayName The name of the holiday or its distance from Easter in days The allowed values ​​are: Easter, EasterSunday, EasterMonday, GoodFriday, Pentecost, PentecostSunday, PentecostMonday or day modifier -2, 0, 1, 49, 50
+ * @param {null|logical} gregorian calendar when null or false, julian calendar when true
+ * @returns {date} Calculated Easter, Good Friday, Pentecost 
+ */
+
+let 
+    EasterDate = (yearNumOrDateOrDateTime as any, optional holidayName as any, optional julianCalendar as logical) as date => 
+    let
+                    yearNum = try Number.From(yearNumOrDateOrDateTime) 
+                              otherwise Date.Year(Date.From(yearNumOrDateOrDateTime)),
+
+                    year = if yearNum >= 1583 and yearNum <= 2299 then yearNum 
+                           else error Error.Record("Invalid year range", "The year can only be between 1583 and 2299!"),
+
+                    holidayName = Text.Replace(Text.Lower(holidayName), " ", ""),    
+                    holidayMod =     if holidayName = null              or    
+                                        holidayName = 0                 or 
+                                        holidayName = "easter"          or
+                                        holidayName = "eastersunday"    then 0 
+                                else if holidayName = -2                or 
+                                        holidayName = "goodfriday"      then -2
+                                else if holidayName = 1                 or 
+                                        holidayName = "eastermonday"    then -2
+                                else if holidayName = 49                or 
+                                        holidayName = "pentecost"       or 
+                                        holidayName = "pentecostsunday" then 49
+                                else if holidayName = 50                or 
+                                        holidayName = "pentecostmonday" then 50
+                                else error Error.Record("Invalid holidayName", "The allowed values ​​are: Easter, EasterSunday, EasterMonday, GoodFriday, Pentecost, PentecostSunday, PentecostMonday or day modifier -2, 0, 1, 49, 50"), 
+
+
+                    julianCalendar = if julianCalendar = null then false else julianCalendar, 
+
+                    //https://hu.wikipedia.org/wiki/H%C3%BAsv%C3%A9tsz%C3%A1m%C3%ADt%C3%A1s#Gauss_m%C3%B3dszere
+                    M =      if julianCalendar                then 15
+                        else if year >= 1583 and year <= 1699 then 22
+                        else if year >= 1700 and year <= 1899 then 23
+                        else if year >= 1900 and year <= 2199 then 24
+                        else if year >= 2200 and year <= 2299 then 25
+                        else error Error.Record("Invalid year range", "The year can only be between 1583 and 2299!"), 
+
+                    N =      if julianCalendar                then 6
+                        else if year >= 1583 and year <= 1699 then 2
+                        else if year >= 1700 and year <= 1899 then 3
+                        else if year >= 1800 and year <= 1899 then 4
+                        else if year >= 1900 and year <= 2099 then 5
+                        else if year >= 2100 and year <= 2199 then 6
+                        else if year >= 2200 and year <= 2299 then 0
+                        else error Error.Record("Invalid year range", "The year can only be between 1583 and 2299!"),
+
+                    a = Number.Mod(year, 19),
+                    b = Number.Mod(year, 4),
+                    c = Number.Mod(year, 7), 
+                    d = Number.Mod((19 * a + M), 30),
+                    e = Number.Mod((2 * b + 4 * c + 6 * d + N), 7),
+
+                    month  = if d + e < 10 then 3 else 4, 
+                    preDay = if month = 3 then d + e + 22 else d + e - 9,
+                    day    =      if month = 4 and preDay = 25 and d = 28 and e = 6 and a > 10 then 19 
+                             else if month = 4 and preDay = 26 then 19 else preDay, 
+                            
+                    Result = Date.AddDays(#date(year, month, day), holidayMod)
+    in Result
+in
+     EasterDate
