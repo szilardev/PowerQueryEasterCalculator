@@ -15,11 +15,19 @@ let
                     getYear           = yearNumOrDateOrDateTime, 
                     getHolidayName    = if holidayName = null or holidayName = "" then null 
                                         else try Number.From(holidayName) otherwise Text.Replace(Text.Lower(holidayName), " ", ""), 
-                    getJulianCalendar = if julianCalendar = null or julianCalendar = "" then false else Logical.FromText(julianCalendar), 
+                    getJulianCalendar = if julianCalendar = "true" or julianCalendar = true then true 
+                                        else if julianCalendar = null or julianCalendar = "null" or julianCalendar = "" or julianCalendar = "false" or julianCalendar = false then false
+                                        else error Error.Record("Invalid julianCalendar value", "The julianCalendar can only be null, true or false!"),
 
-                    yearNum = try Date.Year(Date.From(DateTime.FromText(getYear))) 
+                    /*yearNum = try Number.From(getYear)
                               otherwise try Date.Year(Date.From(getYear))
-                                        otherwise  Number.From(getYear),
+                                        otherwise  Date.Year(Date.From(DateTime.FromText(getYear))) ,*/
+                    yearNum =      if Value.Is(getYear, type datetime) then Date.Year(Date.From(getYear)) 
+                              else if Value.Is(getYear, type date)     then Date.Year(getYear)   
+                              else try Number.From(getYear)
+                                   otherwise try Date.Year(Date.From(getYear))
+                                             otherwise try Date.Year(Date.From(DateTime.FromText(getYear))) 
+                                                       otherwise error Error.Record("Invalid year parameter", "Unknown format"),
 
                     year = if yearNum >= 1583 and yearNum <= 2299 then yearNum 
                            else error Error.Record("Invalid year range", "The year can only be between 1583 and 2299! Your year: " & Text.From(yearNum)),
