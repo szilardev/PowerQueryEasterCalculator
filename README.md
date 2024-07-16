@@ -35,7 +35,7 @@ Possible parameters, their types and accepted values.
 | 2024 | "GoodFriday" | true | 2024-04-20 |
 
 ## Get Started
-* Download the example or start a new Power BI project. 
+* Download the example or start a new Power BI project or open a blank Excel workbook. 
 * **PowerBI** Open Transform data under the Home tab, Queries group.
 ![Relationship](/docs/images/PBIOpenPowerQueryEditor.png)
 * **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
