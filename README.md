@@ -36,10 +36,10 @@ Possible parameters, their types and accepted values.
 
 ## Get Started
 1. Download the example or start a new Power BI project or open a blank Excel workbook. 
-2.a **PowerBI** Open Transform data under the Home tab, Queries group.
-![Relationship](/docs/images/PBIOpenPowerQueryEditor.png)
-2.b **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
-![Relationship](/docs/images/ExcelOpenPowerQueryEditor.png)
+2. **PowerBI** Open Transform data under the Home tab, Queries group.
+   ![Relationship](/docs/images/PBIOpenPowerQueryEditor.png)
+   - **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
+     ![Relationship](/docs/images/ExcelOpenPowerQueryEditor.png)
 3. Add a new Blank Query
    - **PowerBI** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu. <br />
      ![Relationship](/docs/images/AddNewBlankQuery.png)
