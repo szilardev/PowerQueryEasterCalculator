@@ -3,7 +3,7 @@ Power Query function, which calculates the date of Easter for the year received 
 
 ## Syntax
 ```
-EasterDate(**yearNumOrDateOrDateTime** as any, optional **holidayName** as nullable any, optional **julianCalendar** as nullable any) as date
+EasterDate(yearNumOrDateOrDateTime as any, optional holidayName as nullable any, optional julianCalendar as nullable any) as date
 ```
 
 ## About
