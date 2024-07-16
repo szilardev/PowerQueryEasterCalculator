@@ -8,9 +8,9 @@ EasterDate(**yearNumOrDateOrDateTime** as any, optional **holidayName** as nulla
 
 ## About
 Possible parameters, their types and accepted values.
-+ ** yearNumOrDateOrDateTime ** - number, text, date, datetime
-+ ** holidayName ** (optional) - text, number - allowed values: Easter, EasterSunday, EasterMonday, GoodFriday, Pentecost, PentecostSunday, PentecostMonday or day modifier -2, 0, 1, 49, 50
-+ ** julianCalendar ** (optional) - logical
++ **yearNumOrDateOrDateTime** - number, text, date, datetime
++ **holidayName** (optional) - text, number - allowed values: Easter, EasterSunday, EasterMonday, GoodFriday, Pentecost, PentecostSunday, PentecostMonday or day modifier -2, 0, 1, 49, 50
++ **julianCalendar** (optional) - logical
 
 ## Example 
 
