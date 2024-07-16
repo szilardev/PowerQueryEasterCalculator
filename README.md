@@ -33,3 +33,27 @@ Possible parameters, their types and accepted values.
 | 2024 | | true | 2024-04-22 |
 | 2024 | "Easter" | true | 2024-04-22 |
 | 2024 | "GoodFriday" | true | 2024-04-20 |
+
+## Get Started
+* Download the example or start a new Power BI project. 
+* **PowerBI** Open Transform data under the Home tab, Queries group.
+![Relationship](/docs/images/PBIOpenPowerQueryEditor.png)
+* **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
+![Relationship](/docs/images/ExcelOpenPowerQueryEditor.png)
+* Add a new Blank Query
+  **PowerBI** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu.
+![Relationship](/docs/images/AddNewBlankQuery.png)
+  **Excel** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu, Other Sources submenu.
+![Relationship](/docs/images/AddNewBlankQueryExcel.png)
+* Open Advanced Editor under the Home tab, Query group.
+![Relationship](/docs/images/OpeninAdvancedEditor.png)
+* Copy and paste the EasterCalculatorFunc file contents
+![Relationship](/docs/images/PasteToAdvancedEditorWindow.png)
+* Rename the function to whatever you want (Ex: EasterDateCalculator)
+  Press the right mouse button on the function name in the left panel and choose rename! 
+![Relationship](/docs/images/RenameFunction.png)
+* Click on the function to invoke to itself
+![Relationship](/docs/images/InvokeCustomFunctionSettings.png)
+* Or add it to your table as a new column.
+   Click on the Invoke Custom Functino under the Add column tab, General group.
+![Relationship](/docs/images/AddColumnInvokeCustomFunction.png)
