@@ -38,7 +38,7 @@ Possible parameters, their types and accepted values.
 1. Download the example or start a new Power BI project or open a blank Excel workbook. 
 2.a **PowerBI** Open Transform data under the Home tab, Queries group.
 ![Relationship](/docs/images/PBIOpenPowerQueryEditor.png)
-2.b* **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
+2.b **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
 ![Relationship](/docs/images/ExcelOpenPowerQueryEditor.png)
 3. Add a new Blank Query
    - **PowerBI** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu. <br />
@@ -46,7 +46,7 @@ Possible parameters, their types and accepted values.
   -  **Excel** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu, Other Sources submenu. <br />
      ![Relationship](/docs/images/AddNewBlankQueryExcel.png)
 4. Open Advanced Editor under the Home tab, Query group.
-![Relationship](/docs/images/OpeninAdvancedEditor.png)
+   ![Relationship](/docs/images/OpeninAdvancedEditor.png)
 5. Copy and paste the EasterCalculatorFunc file contents
 ![Relationship](/docs/images/PasteToAdvancedEditorWindow.png)
 6. Rename the function to whatever you want (Ex: EasterDateCalculator) <br />
