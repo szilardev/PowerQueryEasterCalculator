@@ -41,19 +41,19 @@ Possible parameters, their types and accepted values.
 * **Excel** Launch Power Query Editor under the Data tab, Get and Transform group, Get Data dropdown menu.
 ![Relationship](/docs/images/ExcelOpenPowerQueryEditor.png)
 * Add a new Blank Query
-  * **PowerBI** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu.
-![Relationship](/docs/images/AddNewBlankQuery.png)
-  * **Excel** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu, Other Sources submenu.
-![Relationship](/docs/images/AddNewBlankQueryExcel.png)
+  **PowerBI** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu. <br />
+  ![Relationship](/docs/images/AddNewBlankQuery.png)
+  **Excel** Click on the Blank Query under the Home tab, New Query group, New Source dropdown menu, Other Sources submenu. <br />
+  ![Relationship](/docs/images/AddNewBlankQueryExcel.png)
 * Open Advanced Editor under the Home tab, Query group.
 ![Relationship](/docs/images/OpeninAdvancedEditor.png)
 * Copy and paste the EasterCalculatorFunc file contents
 ![Relationship](/docs/images/PasteToAdvancedEditorWindow.png)
 * Rename the function to whatever you want (Ex: EasterDateCalculator)
-  * Press the right mouse button on the function name in the left panel and choose rename! 
+  Press the right mouse button on the function name in the left panel and choose rename! <br />
   ![Relationship](/docs/images/RenameFunction.png)
-* Click on the function to invoke to itself
-![Relationship](/docs/images/InvokeCustomFunctionSettings.png)
+* Click on the function to invoke to itself <br />
+  ![Relationship](/docs/images/InvokeCustomFunctionSettings.png)
 * Or add it to your table as a new column.
-   Click on the Invoke Custom Functino under the Add column tab, General group.
+   Click on the Invoke Custom Functino under the Add column tab, General group. <br />
 ![Relationship](/docs/images/AddColumnInvokeCustomFunction.png)
